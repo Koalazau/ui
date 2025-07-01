@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<style>
+@font-face { font-family:'NanumGothicBold'; src:url('x2clfont/ui/font/NanumGothicBold.ttf') format('truetype'); }
+* { font-family:'NanumGothic bold', '나눔고딕 bold', 'NanumGothicBold', '맑은 고딕' !important; }
+html, body, img, table, tr, td { margin:0; padding:0; }
+body { overflow: hidden; background: url("ui/books/images/bg.jpg") no-repeat; }
+body, table { color:#715128; font-size:13px; line-height:18px;}
+table { border-collapse:collapse; border-spacing:0; }
+table td { vertical-align:top; }
+fieldset, img { border: none; }
+.wrap { width:310px; height:270px; overflow-x: hidden; overflow-y: scroll; word-wrap:break-word; background:url(ui/books/images/bg.jpg) no-repeat }
+.img { padding:5px 0 10px 0; text-align:center }
+.img img { vertical-align:top }
+/* preload asset */
+body:after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    background: url(ui/books/images/scroll/thumb_ov.png) no-repeat,
+        url(ui/books/images/scroll/thumb_ck.png) no-repeat;
+}
+::-webkit-scrollbar {
+    width: 34px;
+}
+::-webkit-scrollbar-button:vertical {
+    height: 20px;
+    background: url(ui/books/images/scroll/button.png) no-repeat;
+}
+::-webkit-scrollbar-button:vertical:start {
+    background-position: 0 0;
+}
+::-webkit-scrollbar-button:vertical:start:hover {
+    background-position: -30px 0;
+}
+::-webkit-scrollbar-button:vertical:start:active {
+    background-position: -60px 0;
+}
+::-webkit-scrollbar-button:vertical:end {
+    background-position: 0 -20px;
+}
+::-webkit-scrollbar-button:vertical:end:hover {
+    background-position: -30px -20px;
+}
+::-webkit-scrollbar-button:vertical:end:active {
+    background-position: -60px -20px;
+}
+::-webkit-scrollbar-track:vertical {
+    background: url(ui/books/images/scroll/track_bg.png) repeat-y;
+}
+::-webkit-scrollbar-thumb:vertical {
+    -webkit-border-image: url(ui/books/images/scroll/thumb.png) 13 34 27 0 repeat round;
+    border-width: 13px 34px 27px 0;
+    min-height: 60px;
+    border-style: solid;
+}
+::-webkit-scrollbar-thumb:vertical:hover {
+    -webkit-border-image: url(ui/books/images/scroll/thumb_ov.png) 13 34 27 0 repeat round;
+}
+::-webkit-scrollbar-thumb:vertical:active {
+    -webkit-border-image: url(ui/books/images/scroll/thumb_ck.png) 13 34 27 0 repeat round;
+}
+</style>
+</head>
+<body>
+    <div class="wrap">
+        <%=page_content%>
+    </div>
+</body>
+</html>
